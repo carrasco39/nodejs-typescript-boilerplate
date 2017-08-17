@@ -1,0 +1,7 @@
+(async () => {
+	await require("./boot/start")();
+
+	const path = require("path");
+
+	require(path.get("bin", "app"));
+})();

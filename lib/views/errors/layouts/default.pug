@@ -1,0 +1,15 @@
+html
+	head
+		title 
+			block title
+	body
+		#header
+			block header
+		#main
+			block main
+				|#{message}
+				if error
+					hr
+					|#{error}
+		#footer
+			block footer
