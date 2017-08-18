@@ -13,4 +13,6 @@ module.exports = async (server) => {
       handler(io);
     }
   }
+  
+  return io;
 };
