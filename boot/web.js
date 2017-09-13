@@ -46,17 +46,23 @@ module.exports = async () => {
 
 	  // render the error page
 	  let code = err.status || 500;
+  	res.status(code);
+
+	  if(req.xhr) {
+	  	return res.json({
+  			"message": res.locals.message,
+  			"error": res.locals.error
+			});
+	  }
+
 		let view = `errors/${code}`;
 
 		if(!fs.existsSync(path.get("view", `${view}.pug`))) {
 			view = "errors/default";
 		}
 
-		console.log(view);
-
-	  res.status(code);
 	  res.render(view);
 	});
-
+	
 	return app;
 };
