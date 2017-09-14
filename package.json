@@ -1,5 +1,5 @@
 {
-  "name": "game-api",
+  "name": "nodejs-io-express",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,15 +18,18 @@
     "serve-favicon": "^2.4.3",
     "socket.io": "^2.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^3.5.3",
+    "should": "^13.0.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://williamcarril@bitbucket.org/team-matchbox/game.git"
+    "url": "git+https://bitbucket.org/team-matchbox/nodejs-io-express.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/team-matchbox/game#readme"
+  "homepage": "https://bitbucket.org/team-matchbox/nodejs-io-express#readme"
 }
