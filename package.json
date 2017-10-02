@@ -17,7 +17,8 @@
     "mysql2": "^1.3.6",
     "pug": "^2.0.0-rc.3",
     "serve-favicon": "2.4.5",
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.0.3",
+    "socket.io-client": "2.0.3"
   },
   "devDependencies": {
     "@types/async": "^2.0.40",
@@ -35,7 +36,7 @@
     "@types/jquery": "^2.0.41",
     "@types/lodash": "^4.14.63",
     "@types/mongodb": "^2.1.43",
-    "@types/mongoose": "^4.7.9",
+    "@types/mongoose": "^4.7.23",
     "@types/morgan": "^1.7.32",
     "@types/node": "^7.0.12",
     "@types/nodemailer": "^1.3.32",
@@ -44,6 +45,7 @@
     "@types/request": "0.0.45",
     "@types/serve-favicon": "^2.2.29",
     "@types/socket.io": "^1.4.30",
+    "@types/socket.io-client": "^1.4.30",
     "@types/supertest": "^2.0.0",
     "concurrently": "^3.4.0",
     "jest": "^19.0.2",

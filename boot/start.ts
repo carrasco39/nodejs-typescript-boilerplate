@@ -1,6 +1,9 @@
 import * as Bluebird from "bluebird";
 import * as async from "async";
 import * as fs from "fs";
+import * as mongoose from "mongoose";
+import * as config from "config";
+import * as dotenv from "dotenv";
 const fis: any = Bluebird.promisifyAll(fs);
 
 export async function start() {
@@ -26,4 +29,9 @@ export async function start() {
             });
         });
     }
+    // mongoose.Promise = Bluebird;
+    dotenv.config();
+    const dbConfig = config.get("db");
+    console.log(dbConfig);
+    mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.name}`);
 }

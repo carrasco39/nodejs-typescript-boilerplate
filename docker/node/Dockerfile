@@ -6,4 +6,4 @@ WORKDIR /var/www
 
 EXPOSE 8080 9090
 
-CMD ["nodemon", "-L", "/var/www/index.js"]
+CMD ["npm", "start"]

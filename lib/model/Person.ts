@@ -1,4 +1,3 @@
-
 export class Person {
 
     private fname: string;

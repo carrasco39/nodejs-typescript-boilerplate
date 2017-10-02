@@ -31,7 +31,6 @@ class Web {
             app.use(bodyParser.json());
             app.use(bodyParser.urlencoded({ "extended": false }));
             app.use(cookieParser());
-            console.log("I'M HERE");
             const routers = yield fs.readdirAsync(helper.get("route"));
             for (const file of routers) {
                 const handler = require(helper.get("route", file));
@@ -41,15 +40,12 @@ class Web {
                 }
                 console.log(helper.get("route", file));
             }
-            console.log("WHAT ABOUT HERE?");
             // catch 404 and forward to error handler
             app.use((req, res, next) => __awaiter(this, void 0, void 0, function* () {
                 const err = new Error("404 Not Found");
-                // err.status = 404;
-                console.log("entering");
+                err.status = 404;
                 next(err);
             }));
-            console.log("PASSING THROUGH HERE");
             // error handler
             app.use((err, req, res, next) => __awaiter(this, void 0, void 0, function* () {
                 // set locals, only providing error in development

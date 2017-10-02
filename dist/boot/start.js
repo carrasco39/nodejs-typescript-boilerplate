@@ -10,6 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const Bluebird = require("bluebird");
 const fs = require("fs");
+const mongoose = require("mongoose");
+const config = require("config");
+const dotenv = require("dotenv");
 const fis = Bluebird.promisifyAll(fs);
 function start() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -30,6 +33,11 @@ function start() {
                 });
             });
         }
+        // mongoose.Promise = Bluebird;
+        dotenv.config();
+        const dbConfig = config.get("db");
+        console.log(dbConfig);
+        mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.name}`);
     });
 }
 exports.start = start;

@@ -5,7 +5,7 @@ const express_1 = require("express");
 module.exports = (api) => {
     const router = express_1.Router();
     const instance = TestController_1.TestController.instance;
-    router.get("/", instance.route_index);
-    console.log("saindo");
+    router.get("/hello", instance.route_index);
+    router.get("/", instance.route_getSocketIOTEXT);
     api.use("/tests", router);
 };

@@ -13,6 +13,7 @@ const http = require("http");
 const fis = require("fs");
 const config = require("config");
 const web_1 = require("../boot/web");
+const socketio = require("../boot/io");
 function serve() {
     return __awaiter(this, void 0, void 0, function* () {
         const fs = Bluebird.promisifyAll(fis);
@@ -20,6 +21,7 @@ function serve() {
         const app = yield boot.setApp();
         const server = http.createServer(app);
         const port = config.get("port");
+        const io = socketio.startIO(server);
         app.set("port", port);
         server.listen(port, () => {
             console.log("Server running at port " + port);

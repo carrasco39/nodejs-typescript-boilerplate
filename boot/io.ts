@@ -7,7 +7,7 @@ import * as helper from "../utils/helper";
 const fs: any = Bluebird.promisifyAll(fis);
 
 
-module.exports = async (server: any) => {
+export async function startIO(server: any) {
     let io = socketio(server);
     let events = await fs.readdirAsync(helper.get("event"));
 
@@ -18,5 +18,5 @@ module.exports = async (server: any) => {
         }
     }
     return io;
-};
+}
 

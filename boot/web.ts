@@ -28,7 +28,6 @@ export class Web {
         app.use(bodyParser.urlencoded({ "extended": false }));
         app.use(cookieParser());
 
-        console.log("I'M HERE");
         const routers = await fs.readdirAsync(helper.get("route"));
         for (const file of routers) {
             const handler = require(helper.get("route", file));
@@ -38,16 +37,16 @@ export class Web {
             }
             console.log(helper.get("route", file));
         }
-        console.log("WHAT ABOUT HERE?");
+
 
         // catch 404 and forward to error handler
         app.use(async (req, res, next) => {
-            const err = new Error("404 Not Found");
-            // err.status = 404;
-            console.log("entering");
+            const err: any = new Error("404 Not Found");
+            err.status = 404;
+
             next(err);
         });
-        console.log("PASSING THROUGH HERE");
+
         // error handler
         app.use(async (err: any, req: any, res: any, next: any) => {
             // set locals, only providing error in development

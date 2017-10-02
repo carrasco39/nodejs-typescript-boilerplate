@@ -13,14 +13,17 @@ const fis = require("fs");
 const socketio = require("socket.io");
 const helper = require("../utils/helper");
 const fs = Bluebird.promisifyAll(fis);
-module.exports = (server) => __awaiter(this, void 0, void 0, function* () {
-    let io = socketio(server);
-    let events = yield fs.readdirAsync(helper.get("event"));
-    for (let file of events) {
-        let handler = require(helper.get("event", file));
-        if (typeof handler == "function") {
-            handler(io);
+function startIO(server) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let io = socketio(server);
+        let events = yield fs.readdirAsync(helper.get("event"));
+        for (let file of events) {
+            let handler = require(helper.get("event", file));
+            if (typeof handler == "function") {
+                handler(io);
+            }
         }
-    }
-    return io;
-});
+        return io;
+    });
+}
+exports.startIO = startIO;
