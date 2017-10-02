@@ -1,5 +1,4 @@
 const path = require("path");
-
 module.exports = {
     "path": {
         "base": path.resolve("./"),
@@ -14,8 +13,7 @@ module.exports = {
         "public": path.resolve("./public"),
         "boot": path.resolve("./dist/boot")
     },
-    "io": {
-    },
+    "io": {},
     "port": process.env.PORT || 8080,
     "db": {
         "host": process.env.DB_HOST || "localhost",

@@ -3,5 +3,5 @@
 
 	const path = require("path");
 
-	require(path.get("bin", "app"));
+	// require(path.get("bin", "app"));
 })();
