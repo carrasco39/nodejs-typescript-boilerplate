@@ -1,3 +1,3 @@
-FROM mongo:3
+FROM couchdb
 
 WORKDIR /data/db

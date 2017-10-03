@@ -31,7 +31,7 @@ export async function start() {
     }
     // mongoose.Promise = Bluebird;
     dotenv.config();
-    const dbConfig = config.get("db");
-    console.log(dbConfig);
-    mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.name}`);
+    // const dbConfig = config.get("db");
+    // console.log(dbConfig);
+    // mongoose.connect(`mongodb://${dbConfig.host}:${dbConfig.port}/${dbConfig.name}`);
 }

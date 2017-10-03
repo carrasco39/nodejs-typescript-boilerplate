@@ -21,7 +21,7 @@ services:
     environment:
       - PORT=8080
       - DB_HOST=db
-      - DB_PORT=27017
+      - DB_PORT=5984
       - DB_NAME=game
     ports:
       - "8081:8080"
@@ -32,7 +32,7 @@ services:
     volumes:
       - data-volume:/data/db
     ports:
-      - "27018:27017"
+      - "5985:5984"
 
 volumes:
   data-volume:
